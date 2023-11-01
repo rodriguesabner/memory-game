@@ -1,5 +1,5 @@
 import {Grid, Header, Layout} from "./styles.tsx";
-import {useEffect, useLayoutEffect, useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import {useNavigate} from "react-router-dom";
 
 const Game = () => {
@@ -13,7 +13,7 @@ const Game = () => {
     let firstCard: any = '';
     let secondCard: any = '';
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         loadGame();
     }, []);
 
@@ -37,8 +37,9 @@ const Game = () => {
     }, [timer]);
 
     const loadGame = () => {
+        checkPlayerName();
+
         if(!isStarted) {
-            checkPlayerName();
             sortCards();
         }
     }

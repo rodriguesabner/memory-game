@@ -20,6 +20,9 @@ const Login = () => {
 
     const goToGame = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
+        if (!name) return alert('Digite seu nome');
+
         localStorage.setItem('player', name);
         navigate("/game");
     }
