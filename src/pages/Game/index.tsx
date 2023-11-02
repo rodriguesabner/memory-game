@@ -137,14 +137,22 @@ const Game = () => {
                 secondCard = '';
             }, 500);
         }
+    }
 
+    const convertSeconds = () => {
+        const minutes = Math.floor(+timer / 60);
+        const seconds = +timer % 60;
+
+        if (minutes === 0) return `${seconds}s`;
+
+        return `${minutes}m ${seconds}s`;
     }
 
     return (
         <Layout>
             <Header>
                 <span className="player">{playerName}</span>
-                <span>Tempo: <span className="timer">{timer}</span></span>
+                <span>Tempo: <span className="timer">{convertSeconds()}</span></span>
             </Header>
 
             <Grid ref={gridRef} />
