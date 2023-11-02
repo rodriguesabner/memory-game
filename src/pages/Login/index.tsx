@@ -3,6 +3,7 @@ import Logo from "../../assets/logo.png";
 import Brain from "../../assets/cerebro.jpg";
 import {useNavigate} from "react-router-dom";
 import React, {useEffect, useState} from "react";
+import 'animate.css';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -31,8 +32,8 @@ const Login = () => {
         <Layout>
             <Form onSubmit={(e) => goToGame(e)}>
                 <Header>
-                    <img src={Logo} alt="logo"/>
-                    <img src={Brain} alt="brain icon"/>
+                    <img className="animate__animated animate__pulse animate__infinite" src={Logo} alt="logo"/>
+                    <img className="animate__animated animate__pulse animate__infinite" src={Brain} alt="brain icon"/>
                     <h1>Jogo da Memória</h1>
                 </Header>
 

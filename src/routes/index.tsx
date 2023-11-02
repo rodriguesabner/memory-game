@@ -2,6 +2,7 @@ import {createBrowserRouter} from "react-router-dom";
 import Root from "../Root.tsx";
 import Login from "../pages/Login";
 import Game from "../pages/Game";
+import EndGame from "../pages/EndGame";
 
 const router = createBrowserRouter([
     {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
             {
                 path: "/game",
                 element: <Game/>
+            },
+            {
+                path: "/end-game",
+                element: <EndGame/>
             },
         ],
     },

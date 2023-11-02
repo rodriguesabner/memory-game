@@ -23,10 +23,21 @@ export const Header = styled.header`
   h1 {
     color: #333;
     font-size: 1.5em;
+    margin-top: 10px;
   }
 
   img {
     width: 250px;
+  }
+
+  @media(max-height: 800px) {
+    img {
+      width: 150px
+    }
+
+    h1 {
+      font-size: 1.2em;
+    }
   }
 `;
 
@@ -40,6 +51,12 @@ export const Input = styled.input`
   outline: none;
   padding: 15px;
   width: 100%;  
+
+  
+  @media(max-height: 800px) {
+    font-size: 0.8em;
+    padding: 10px;
+  }
 `;
 
 export const LoginButton = styled.button`
@@ -58,5 +75,11 @@ export const LoginButton = styled.button`
     border: 2px solid #969595;
     color: #aaa;
     cursor: auto;
+  }
+
+  
+  @media(max-height: 800px) {
+    font-size: 0.8em;
+    padding: 10px;
   }
 `;

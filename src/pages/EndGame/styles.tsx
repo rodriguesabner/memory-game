@@ -12,10 +12,10 @@ export const Layout = styled.main`
   padding: 20px 20px 50px;
 `;
 
-export const Header = styled.header`
+export const Container = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   background-color: rgba(255, 255, 255, 0.8);
   font-size: 1.2em;
   width: 100%;
@@ -23,6 +23,34 @@ export const Header = styled.header`
   padding: 20px;
   margin: 0 0 30px;
   border-radius: 5px;
+  gap: 20px;
+  text-align: center;
+
+  footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+
+    button {
+      background-color: #00b5cc;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: all 400ms ease;
+
+      &:hover {
+        filter: brightness(0.9);
+      }
+
+      &:last-child {
+        background-color: #ff0000;
+      }
+    }
+  }
 
   @media screen and (max-height: 800px) {
     font-size: 1em;

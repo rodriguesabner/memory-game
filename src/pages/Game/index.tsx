@@ -1,6 +1,6 @@
-import {Grid, Header, Layout} from "./styles.tsx";
-import {useEffect, useRef, useState} from "react";
-import {useNavigate} from "react-router-dom";
+import { Grid, Header, Layout } from "./styles.tsx";
+import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Game = () => {
     const navigate = useNavigate();
@@ -28,7 +28,8 @@ const Game = () => {
 
         if (disabledCards.length === 20) {
             clearInterval(interval);
-            alert(`Parabéns, ${playerName}! Seu tempo foi de: ${timer}`);
+            localStorage.setItem('timer', timer);
+            navigate('/end-game');
         }
 
         return () => {
@@ -39,7 +40,7 @@ const Game = () => {
     const loadGame = () => {
         checkPlayerName();
 
-        if(!isStarted) {
+        if (!isStarted) {
             sortCards();
         }
     }
@@ -129,13 +130,11 @@ const Game = () => {
             secondCard = '';
         } else {
             setTimeout(() => {
-
                 firstCard.classList.remove('reveal-card');
                 secondCard.classList.remove('reveal-card');
 
                 firstCard = '';
                 secondCard = '';
-
             }, 500);
         }
 
@@ -148,7 +147,7 @@ const Game = () => {
                 <span>Tempo: <span className="timer">{timer}</span></span>
             </Header>
 
-            <Grid ref={gridRef}/>
+            <Grid ref={gridRef} />
         </Layout>
     );
 };
